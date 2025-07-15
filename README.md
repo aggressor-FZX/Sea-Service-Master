@@ -1,4 +1,41 @@
-This is a GUI that generates Sea service Letters in DOCX format. It reads in a spread sheet data to populate items on the GUI. The user then must then choose the type of letter to create and make moddifications then the GUI will Create a sea service letter with NOAA letter head and a signiture block for signing. It was made in PyQT and makes a cool GUI interface that shows you stuff before it writes the letter.
+# Sea Service Master Application
 
-This only works with a spreadsheet with the heading and columns that are desinged for the python program and Pandas sdk instructions in the code base. In other words you need to know how to write the spread sheet for the 
-program to get the information correctly. 
+A PySide6 (Qt for Python) desktop application designed to manage, analyze, and generate sea service letters from Excel data for maritime personnel.
+
+## Overview
+
+This application provides a graphical interface to:
+
+- Load Excel files containing sea service records
+- Display and manipulate calendar-based data tables of service days
+- Calculate days underway, in port, leave, training, and other status categories
+- Generate formatted sea service letters as Word documents, using customizable templates
+- Support manual edits with instant recalculation and validation
+- Copy table data easily for external use
+
+It is built with **PySide6**, **pandas**, and integrates with Microsoft Word document generation (via a custom module).
+
+## Features
+
+- **Load and parse Excel files** of service data with configurable header row
+- Interactive **calendar and letter tables** with color-coded day statuses (`U/W`, `I/P`, `L`, etc.)
+- Automatic calculation of total days underway or in port
+- Validation of date inputs and recalculation of day counts on-the-fly
+- Customizable user inputs for personnel information (name, title, ship, ratings, etc.)
+- Generates sea service letters in Word format using user-selected templates and output directories
+- Copy selected table data to clipboard in tab-separated format for easy pasting
+- Error handling and informative messages for invalid inputs
+
+## Installation
+
+Requires Python 3.x with the following dependencies:
+
+- PySide6
+- pandas
+- openpyxl (for Excel reading)
+- Your custom `Make_PDF` module for document generation
+
+Install dependencies using:
+
+```bash
+pip install PySide6 pandas openpyxl
